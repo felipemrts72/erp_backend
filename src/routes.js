@@ -7,6 +7,7 @@ const saleRoutes = require('./modules/sales/sale.routes');
 const stockRoutes = require('./modules/inventory/stock.routes');
 const financeRoutes = require('./modules/finance/finance.routes');
 const productionRoutes = require('./modules/production/production.routes');
+const authRoutes = require('./modules/auth/auth.routes');
 
 const router = express.Router();
 
@@ -17,5 +18,6 @@ router.use('/sales', saleRoutes);
 router.use('/stock', stockRoutes);
 router.use('/finance', financeRoutes);
 router.use('/production', productionRoutes);
+router.use('/auth', authRoutes);
 
 module.exports = router;

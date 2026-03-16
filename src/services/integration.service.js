@@ -39,6 +39,7 @@ const createStockExitForSale = async (sale) => {
     product_id: item.product_id,
     type: 'saida',
     quantity: item.quantity,
+    warehouse: item.warehouse || 'principal',
     document_id: sale._id.toString(),
     date: new Date()
   }));
@@ -89,6 +90,7 @@ const createProductionOrdersForSale = async (sale) => {
           product_id: material.product_id,
           type: 'reserva',
           quantity: material.quantity,
+          warehouse: item.warehouse || 'principal',
           document_id: sale._id.toString(),
           date: new Date()
         }))

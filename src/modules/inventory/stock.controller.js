@@ -82,7 +82,6 @@ const createPurchaseOrder = async (req, res, next) => {
             product_id: item.product_id,
             type: 'entrada',
             quantity: item.quantity,
-            warehouse: item.warehouse || purchase.warehouse || 'principal',
             document_id: purchase._id.toString(),
             date: new Date()
           }

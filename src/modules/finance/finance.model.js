@@ -14,9 +14,6 @@ const financialMoveSchema = new mongoose.Schema(
     value: { type: Number, required: true, min: 0 },
     due_date: { type: Date, required: true },
     status: { type: String, enum: ['pending', 'paid'], default: 'pending' },
-    payment_method: { type: String, trim: true },
-    paid_at: { type: Date },
-    notes: { type: String, trim: true },
     document_id: String,
     installments: { type: [installmentSchema], default: [] }
   },

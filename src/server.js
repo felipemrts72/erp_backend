@@ -1,10 +1,12 @@
 const app = require('./app');
-const connectDatabase = require('./config/database');
+const db = require('./config/database');
 
 const PORT = process.env.PORT || 3000;
 
-connectDatabase()
+db.query('SELECT 1')
   .then(() => {
+    console.log('Banco conectado');
+
     app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
   })
   .catch((error) => {

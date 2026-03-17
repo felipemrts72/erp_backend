@@ -1,9 +1,11 @@
-const mongoose = require('mongoose');
+const { Pool } = require('pg');
 
-const connectDatabase = async () => {
-  const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/erp_industrial';
-  await mongoose.connect(mongoUri);
-  console.log('MongoDB conectado');
-};
+const connectDatabase = new Pool({
+  user: 'postgres',
+  password: 'universal123',
+  host: 'localhost',
+  port: 5432,
+  database: 'erp',
+});
 
 module.exports = connectDatabase;
